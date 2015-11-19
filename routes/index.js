@@ -8,7 +8,14 @@ router.get('/', function(req, res, next) {
 
 /* GET Hello World page. */
 router.get('/philosophy', function(req, res) {
-    res.render('cagers/philosophy', { title: 'Philosophy & Goals' });
+  var db = req.db;
+    var collection = db.get('usercollection');
+    collection.find({},{},function(e,docs){
+        res.render('cagers/philosophy', {
+            "userlist" : docs
+        });
+    });
+    //res.render('cagers/philosophy', { title: 'Philosophy & Goals' });
 });
 /* GET Hello World page. */
 router.get('/camps', function(req, res) {
