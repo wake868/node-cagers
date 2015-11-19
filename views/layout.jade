@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet' href="/css/bootstrap.css")
+    link(rel='stylesheet' href="/css/bootstrap-theme.css")
+  body
+    nav.navbar.navbar-inverse
+      div.container
+        div.navbar-header
+          button.navbar-toggle.collapsed(type="button", data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        div.collapse.navbar-collapse(id="bs-example-navbar-collapse-1")
+          ul.nav.navbar-nav
+            li
+              a(href="/philosophy") Philosophy
+            li
+              a(href="/programdirector") Program Director
+            li
+              a(href="/development") Skill Development
+            li
+              a(href="/teams") Teams
+            li
+              a(href="/camps") Camps
+            li
+              a(href="/coachingclinics") Coaching Clinics
+            li
+              a(href="/strengthshoe") Strength Shoe
+            li
+              a(href="/contact") Contact
+    
+    block content
+    
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
+    script(src='/js/bootstrap.min.js')
