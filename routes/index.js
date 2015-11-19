@@ -6,44 +6,16 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Cagers' });
 });
 
-/* GET Hello World page. */
-router.get('/philosophy', function(req, res) {
+router.get('/article/:slug', function(req, res, next) {
   var db = req.db;
-    var collection = db.get('usercollection');
-    collection.find({},{},function(e,docs){
-        res.render('cagers/philosophy', {
-            "userlist" : docs
-        });
-    });
-    //res.render('cagers/philosophy', { title: 'Philosophy & Goals' });
+  var collection = db.get('articlecollection');
+  collection.find({"slug":req.params.slug},{},function(e,docs){
+      res.render('cagers/article', {
+          "article" : docs,
+          "title" : docs[0].title
+      });
+  });
 });
-/* GET Hello World page. */
-router.get('/camps', function(req, res) {
-    res.render('cagers/camps', { title: 'Basketball Camps' });
-});
-/* GET Hello World page. */
-router.get('/coachingclinics', function(req, res) {
-    res.render('cagers/coachingclinics', { title: 'Coaching Clinics' });
-});
-/* GET Hello World page. */
-router.get('/contact', function(req, res) {
-    res.render('cagers/contact', { title: 'Contact Us' });
-});
-/* GET Hello World page. */
-router.get('/development', function(req, res) {
-    res.render('cagers/development', { title: 'Skill Development' });
-});
-/* GET Hello World page. */
-router.get('/programdirector', function(req, res) {
-    res.render('cagers/programdirector', { title: 'Program Director' });
-});
-/* GET Hello World page. */
-router.get('/strengthshoe', function(req, res) {
-    res.render('cagers/strengthshoe', { title: 'Strength Shoe Training' });
-});
-/* GET Hello World page. */
-router.get('/teams', function(req, res) {
-    res.render('cagers/teams', { title: 'Select Teams' });
-});
+
 
 module.exports = router;

@@ -1,4 +1,4 @@
-newstuff = [
+seed = [
 { "title" : "Philosophy & Goals", "menutext" : "Philosophy", "menurank" : 1, "slug" : "philosophy", "content" : "Philosophy content goes here." },
 { "title" : "Program Director", "menutext" : "Program Director", "menurank" : 2, "slug" : "programdirector", "content" : "Program director content goes here." },
 { "title" : "Skill Development", "menutext" : "Skill Development", "menurank" : 3, "slug" : "development", "content" : "Skill development content goes here." },
@@ -9,4 +9,4 @@ newstuff = [
 { "title" : "Contact Information", "menutext" : "Contact", "menurank" : 2, "slug" : "contact", "content" : "Contact Information content goes here." },
 ]
 
-db.articlecollection.insert(newstuff);
+db.articlecollection.insert(seed);
