@@ -24,5 +24,4 @@ router.get('/article/:slug', function(req, res, next) {
   });
 });
 
-
 module.exports = router;
